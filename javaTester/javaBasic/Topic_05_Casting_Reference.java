@@ -1,13 +1,12 @@
 package javaBasic;
 
-import org.testng.annotations.Test;
-
 public class Topic_05_Casting_Reference {
 	
 	protected String name;
 
 	public String getName() {
 		return name;
+		
 		
 	}
 	

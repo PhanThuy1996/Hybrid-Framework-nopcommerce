@@ -5,119 +5,106 @@ import java.util.Scanner;
 import org.testng.annotations.Test;
 
 public class Topic_07_Switch_Case_Excercise {
-	
-	public void TC_01_chanLe() {
+	//@Test
+	public void TC_01_inSoTiengAnh() {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Nhập số: ");	
 		int a= scanner.nextInt();
-		if (a%2==0){
-			System.out.println(a + " là số chẵn");
+		switch (a){
+		case 1:
+			System.out.println("One");
+			break;
+		case 2:
+			System.out.println("Two");
+			break;			
+		case 3:
+			System.out.println("Three");
+			break;			
+		case 4:
+			System.out.println("Four");
+			break;			
+		case 5:
+			System.out.println("Five");
+			break;			
+		case 6:
+			System.out.println("Six");
+			break;			
+		case 7:
+			System.out.println("Seven");
+			break;
+		case 8:
+			System.out.println("Eight");
+			break;
+		case 9:
+			System.out.println("Nine");
+			break;			
+		case 10:
+			System.out.println("Ten");
+			break;
+		default:
+			System.out.println("Not belong from one to ten");
+			break;
 		}
-		else {
-			System.out.println(a + " là số lẻ");
-		}
-		
 	}
 	//@Test
-	public void TC_02_soSanh() {
+	public void TC_02_tinhToan() {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Nhập a= ");	
 		int a= scanner.nextInt();
 		System.out.println("Nhập b= ");	
 		int b= scanner.nextInt();
-		if (a>b){
-			System.out.println(a + " lớn hơn " +b);
+		System.out.println("Nhập phép toán = ");
+		char toanTu = scanner.next().charAt(0);
+		switch (toanTu){
+		case '+':
+			System.out.println("a+b="+(a+b));
+			break;
+		case '-':
+			System.out.println("a-b="+(a-b));
+			break;			
+		case '*':
+			System.out.println("a*b="+(a*b));
+			break;			
+		case '/':
+			System.out.println("a/b="+(a/b));
+			break;			
+		case '%':
+			System.out.println("a%b="+(a%b));
+			break;
+		default:
+			System.out.println("Không thể tính");
+			break;
 		}
-		else if(a==b) {
-			System.out.println(a + " bằng " +b);
-		}
-		else {
-			System.out.println(a + " nhỏ hơn " +b);
-		}
-		
 	}
+	
 	//@Test
-	public void TC_03_soSanhTen() {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Tên 1 = ");	
-		String a= scanner.nextLine();
-		System.out.println("Tên 2= ");	
-		String b= scanner.nextLine();
-		if (a.equalsIgnoreCase(b)){
-			System.out.println("Hai người là cùng tên");
-		}
-		else {
-			System.out.println("Hai người là khác tên");
-		}
-		
-	}
-	//@Test
-	public void TC_04_timSoLonNhat() {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Nhập a= ");	
-		int a= scanner.nextInt();
-		System.out.println("Nhập b= ");	
-		int b= scanner.nextInt();
-		System.out.println("Nhập c= ");	
-		int c= scanner.nextInt();
-		if (a>b&&a>c){
-			System.out.println(a + " lớn nhất ");
-		}
-		else if(b>a && b>c) {
-			System.out.println(b + " lớn nhất");
-		}
-		else {
-			System.out.println(c + " lớn nhất");
-		}
-		
-	}
-	//@Test
-	public void TC_05_timSoCoTrongKhoang() {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Nhập a= ");	
-		int a= scanner.nextInt();
-		
-		if (a>=10&&a<=100){
-			System.out.println(a + " nằm trong khoảng 10-100 ");
-		}
-		else {
-			System.out.println(a + " không nằm trong khoảng 10-100");
-		}
-	}
-	//@Test
-	public void TC_06_kiemTraDiemSV() {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Nhập a= ");	
-		float diem= scanner.nextFloat();
-		
-		if (diem>=0&&diem<=5){
-			System.out.println(" Điểm D");
-		}
-		else if (diem>5&&diem<7.5) {
-			System.out.println(" Điểm C");
-		}
-		else if (diem>=7.5&&diem<8.5) {
-			System.out.println(" Điểm B");
-		}
-		else {
-			System.out.println(" Điểm A");
-		}
-	}
-	@Test
-	public void TC_07_kiemTraThang() {
+	public void TC_03_hienThiNgayTrongThang() {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Nhập tháng= ");	
 		int thang= scanner.nextInt();
-		
-		if (thang==1||thang==3||thang==5||thang==7||thang==8||thang==10||thang==12){
+		switch (thang){
+		case 1:
+		case 3:
+		case 5:
+		case 7:
+		case 8:
+		case 10:
+		case 12:
 			System.out.println(" Tháng " +thang+" có 31 ngày");
-		}
-		else if(thang==4||thang==6||thang==9||thang==11) {
-			System.out.println(" Tháng " +thang+" có 30 ngày");
-		}
-		else {
+			break;
+		case 2:
 			System.out.println(" Tháng " +thang+" có 28 ngày");
+			break;			
+		case 4:
+		case 6:
+		case 9:
+		case 11:
+			System.out.println(" Tháng " +thang+" có 30 ngày");
+			break;	
+		default:
+			System.out.println("Bạn nhập sai tháng. Vui lòng nhập lại!");
 		}
 		
 	}
+
 }

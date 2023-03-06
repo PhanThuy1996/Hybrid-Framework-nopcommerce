@@ -19,7 +19,7 @@ public class Topic_12_String {
 		}
 		System.out.println("Số ký tự in hoa trong chuỗi là: " + dem);
 	}
-	@Test
+	//@Test
 	public void TC_02_indemchuoi() {
 	
 		String chuoiKyTu= "Automation Testing 345 Tutorials Online 789 ";
@@ -64,6 +64,16 @@ public class Topic_12_String {
 		}
 		System.out.println("Số trong chuỗi là: " + demSo);
 	}
-	
+	@Test
+	public void TC_03_chuoiNguoc() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Nhập chuỗi: ");	
+		String chuoiKyTu= scanner.nextLine();
+			for(int i = chuoiKyTu.length()-1;i>=0;i--) {
+				char kyTu= chuoiKyTu.charAt(i);
+				System.out.print(kyTu);
+			}
+		
+		}	
 	
 }

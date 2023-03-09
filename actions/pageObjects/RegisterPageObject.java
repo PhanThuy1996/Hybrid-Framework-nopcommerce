@@ -84,6 +84,6 @@ public class RegisterPageObject extends BasePage{
 		waitForElementVisible(driver, RegisterPageUI.EXIST_EMAIL_ERROR_MESSAGE);
 		return getElementText(driver, RegisterPageUI.EXIST_EMAIL_ERROR_MESSAGE);
 	}
-	
+
 
 }

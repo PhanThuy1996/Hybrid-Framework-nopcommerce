@@ -14,12 +14,13 @@ import commons.BasePage;
 import pageObjects.HomePageObject;
 import pageObjects.RegisterPageObject;
 
-public class Level_03_BaseObject extends BasePage {
+public class Level_03_PageObject_01_Register extends BasePage {
 	private WebDriver driver;
 	private String firstName,lastName,emailAdress,password;
 	private String projectPath = System.getProperty("user.dir");
 	private HomePageObject homePage;
 	private RegisterPageObject registerPage;
+	
 	@BeforeClass
 	public void beforeClass() {
 		System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDriver\\geckodriver.exe");
@@ -45,7 +46,8 @@ public class Level_03_BaseObject extends BasePage {
 		Assert.assertEquals(registerPage.getTextLastNameError(),"Last name is required.");
 		Assert.assertEquals(registerPage.getTextEmailError(),"Email is required.");
 		Assert.assertEquals(registerPage.getTextPasswordError(),"Password is required.");
-		Assert.assertEquals(registerPage.getTextConfirmPasswordError(),"Password is required.");	
+		Assert.assertEquals(registerPage.getTextConfirmPasswordError(),"Password is required.");
+	
 	}
 	@Test
 	 public void Register_02_Invalid_Email() {

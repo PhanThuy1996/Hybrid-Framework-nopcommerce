@@ -1,5 +1,6 @@
 package commons;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -66,5 +67,10 @@ public class BaseTest{
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		return driver;
+	}
+	
+	protected int generalFakeNumber() {
+		  Random rand = new Random();
+		  return rand.nextInt(9999);
 	}
 }

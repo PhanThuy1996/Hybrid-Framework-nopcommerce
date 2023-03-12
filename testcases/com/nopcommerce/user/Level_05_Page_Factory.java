@@ -15,7 +15,7 @@ import pageFactory.LoginPageObject;
 import pageFactory.RegisterPageObject;
 
 
-public class Level_05_PageFactory extends BaseTest {
+public class Level_05_Page_Factory extends BaseTest {
 	private WebDriver driver;
 	private String firstName,lastName,emailAdress,password;
 	private HomePageObject homePage;

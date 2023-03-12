@@ -14,9 +14,11 @@ public class LoginPageObject extends BasePage{
 		waitForElementVisible(driver, LoginPageUI.EMAIL_ERROR_MESSAGE);
 		return getElementText(driver, LoginPageUI.EMAIL_ERROR_MESSAGE);
 	}
-	public void clickToLoginButton() {
+	public HomePageObject clickToLoginButton() {
 		waitForElementClickable(driver, LoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
+		return PageGeneratorManager.getHomePage(driver);
+		
 		
 	}
 	public void sendTextToEmailTextBox(String emailText) {

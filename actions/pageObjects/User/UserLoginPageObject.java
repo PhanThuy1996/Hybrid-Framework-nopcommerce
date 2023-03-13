@@ -15,7 +15,7 @@ public class UserLoginPageObject extends BasePage{
 		waitForElementVisible(driver, UserLoginPageUI.EMAIL_ERROR_MESSAGE);
 		return getElementText(driver, UserLoginPageUI.EMAIL_ERROR_MESSAGE);
 	}
-	public UserHomePageObject clickToElement() {
+	public UserHomePageObject clickToLoginButton() {
 		waitForElementClickable(driver, UserLoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, UserLoginPageUI.LOGIN_BUTTON);
 		return PageGeneratorManager.getUserHomePage(driver);				
@@ -36,7 +36,7 @@ public class UserLoginPageObject extends BasePage{
 	public UserHomePageObject loginAtUserPage(String emailText,String passwordText) {
 		sendTextToEmailTextBox(emailText);
 		sendTextPasswordTextBox(passwordText);
-		clickToElement();
+		clickToLoginButton();
 		return PageGeneratorManager.getUserHomePage(driver);	
 	}
 

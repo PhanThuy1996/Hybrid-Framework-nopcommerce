@@ -8,25 +8,25 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.CustomerInfoPageObject;
-import pageObjects.PageGeneratorManager;
-import pageObjects.RegisterPageObject;
+import commons.PageGeneratorManager;
+import pageObjects.User.UserCustomerInfoPageObject;
+import pageObjects.User.UserHomePageObject;
+import pageObjects.User.UserLoginPageObject;
+import pageObjects.User.UserRegisterPageObject;
 
 public class Level_06_Page_Generator_Manager extends BaseTest {
 	private WebDriver driver;
 	private String firstName,lastName,emailAdress,password;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
-	private LoginPageObject loginPage;
-	private CustomerInfoPageObject myAccountPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
+	private UserLoginPageObject loginPage;
+	private UserCustomerInfoPageObject myAccountPage;
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = getBrowserDriver(browserName);
 		driver.get("https://demo.nopcommerce.com/");
-		homePage= PageGeneratorManager.getHomePage(driver);
+		homePage= PageGeneratorManager.getUserHomePage(driver);
 
 		firstName="Automation";
 		lastName ="Testing";
@@ -34,7 +34,7 @@ public class Level_06_Page_Generator_Manager extends BaseTest {
 		password ="123456";
 		
 		System.out.println("Register_03: Step 1: Click to Register Link");
-		registerPage = homePage.clickToRegisterLink();
+		registerPage = homePage.openRegisterPage();
 		System.out.println("Register_03: Step 2: Input data to textbox");
 		registerPage.sendTextToFirstNameTextBox(firstName);
 		registerPage.sendTextToLastNameTextBox(lastName);
@@ -50,7 +50,7 @@ public class Level_06_Page_Generator_Manager extends BaseTest {
 	@Test
 	public void Login_01_Empty_Email() {
 		System.out.println("Login_01: Step 1: Click to Login Link");
-		loginPage = homePage.clickToLoginLink();
+		loginPage = homePage.openLoginPage();
 		System.out.println("Login_01: Step 2: Click to Login Button");
 		loginPage.clickToLoginButton();
 		System.out.println("Login_01: Step 3: Verify Email error message");
@@ -59,7 +59,7 @@ public class Level_06_Page_Generator_Manager extends BaseTest {
 	@Test
 	 public void Login_02_Email_Invalid() {
 		System.out.println("Login_02: Step 1: Click to Login Link");
-		loginPage = homePage.clickToLoginLink();
+		loginPage = homePage.openLoginPage();
 		System.out.println("Login_02: Step 2: Input data to textbox");
 		loginPage.sendTextToEmailTextBox("abc@1232.");
 		System.out.println("Login_02: Step 3: Click to Login Button");
@@ -72,7 +72,7 @@ public class Level_06_Page_Generator_Manager extends BaseTest {
 	  @Test
 	  public void Login_03_Email_Not_Exist() {
 		  System.out.println("Login_03: Step 1: Click to Login Link");
-		  loginPage = homePage.clickToLoginLink();
+		  loginPage = homePage.openLoginPage();
 		  System.out.println("Login_03: Step 2: Input data to textbox");
 		  loginPage.sendTextToEmailTextBox("thuyphan@ott.com");
 		  loginPage.sendTextPasswordTextBox(password);
@@ -85,7 +85,7 @@ public class Level_06_Page_Generator_Manager extends BaseTest {
 	  @Test
 	  public void Login_04_Password_Blank() {
 		  System.out.println("Login_04: Step 1: Click to login Link");
-		  loginPage = homePage.clickToLoginLink();
+		  loginPage = homePage.openLoginPage();
 		  System.out.println("Login_04: Step 2: Input data to textbox");
 		  loginPage.sendTextToEmailTextBox(emailAdress);
 		  System.out.println("Login_04: Step 3: Click to Login Button");
@@ -97,7 +97,7 @@ public class Level_06_Page_Generator_Manager extends BaseTest {
 	 @Test
 	  public void Login_05_Password_Not_Match_Email() {
 		 System.out.println("Login_05: Step 1: Click to Login Link");
-		 loginPage = homePage.clickToLoginLink();
+		 loginPage = homePage.openLoginPage();
 		 System.out.println("Login_05: Step 2: Input data to textbox");
 		 loginPage.sendTextToEmailTextBox(emailAdress);
 		 loginPage.sendTextPasswordTextBox("099090");
@@ -110,7 +110,7 @@ public class Level_06_Page_Generator_Manager extends BaseTest {
 	  @Test
 	  public void Login_06_Valid_Data() {
 		  System.out.println("Login_06: Step 1: Click to Login Link");
-		  loginPage = homePage.clickToLoginLink();
+		  loginPage = homePage.openLoginPage();
 		  System.out.println("Login_06: Step 2: Input data to textbox");
 		  loginPage.sendTextToEmailTextBox(emailAdress);
 		  loginPage.sendTextPasswordTextBox(password);
@@ -119,7 +119,7 @@ public class Level_06_Page_Generator_Manager extends BaseTest {
 		  System.out.println("Login_06: Step 4: Verify My Account Link display"); 
 		 // Assert.assertEquals(homePage.getURLHomePage(),"https://demo.nopcommerce.com/");
 		  Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
-		  myAccountPage = homePage.clickToMyAccountLink();		  		  
+		  myAccountPage = homePage.openMyAccountPage();		  		  
 	  }
 	  
 	@AfterClass

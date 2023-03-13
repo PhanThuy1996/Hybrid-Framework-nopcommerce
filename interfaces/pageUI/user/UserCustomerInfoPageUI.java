@@ -1,6 +1,6 @@
-package pageUI;
+package pageUI.user;
 
-public class CustomerInfoPageUI {
+public class UserCustomerInfoPageUI {
 	public static final String TITLE_PAGE = "//div[@class='page-title']";
 
 	

@@ -11,17 +11,17 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import commons.BasePage;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.User.UserHomePageObject;
+import pageObjects.User.UserLoginPageObject;
+import pageObjects.User.UserRegisterPageObject;
 
 public class Level_03_PageObject_01_Login extends BasePage {
 	private WebDriver driver;
 	private String firstName,lastName,emailAdress,password;
 	private String projectPath = System.getProperty("user.dir");
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
-	private LoginPageObject loginPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
+	private UserLoginPageObject loginPage;
 	@BeforeClass
 	public void beforeClass() {
 		System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDriver\\geckodriver.exe");
@@ -29,9 +29,9 @@ public class Level_03_PageObject_01_Login extends BasePage {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("https://demo.nopcommerce.com/");
-		homePage= new HomePageObject(driver);
-		registerPage = new RegisterPageObject(driver);
-		loginPage = new LoginPageObject(driver);
+		homePage= new UserHomePageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		firstName="Automation";
 		lastName ="Testing";
@@ -39,7 +39,7 @@ public class Level_03_PageObject_01_Login extends BasePage {
 		password ="123456";
 		
 		System.out.println("Register_03: Step 1: Click to Register Link");
-		homePage.clickToRegisterLink();
+		homePage.openRegisterPage();
 		System.out.println("Register_03: Step 2: Input data to textbox");
 		registerPage.sendTextToFirstNameTextBox(firstName);
 		registerPage.sendTextToLastNameTextBox(lastName);
@@ -56,7 +56,7 @@ public class Level_03_PageObject_01_Login extends BasePage {
 	@Test
 	public void Login_01_Empty_Email() {
 		System.out.println("Login_01: Step 1: Click to Login Link");
-		homePage.clickToLoginLink();
+		homePage.openLoginPage();
 		System.out.println("Login_01: Step 2: Click to Login Button");
 		loginPage.clickToLoginButton();
 		System.out.println("Login_01: Step 3: Verify Email error message");
@@ -66,7 +66,7 @@ public class Level_03_PageObject_01_Login extends BasePage {
 	@Test
 	 public void Login_02_Email_Invalid() {
 		System.out.println("Login_02: Step 1: Click to Login Link");
-		homePage.clickToLoginLink();
+		homePage.openLoginPage();
 		System.out.println("Login_02: Step 2: Input data to textbox");
 		loginPage.sendTextToEmailTextBox("abc@1232.");
 		System.out.println("Login_02: Step 3: Click to Login Button");
@@ -79,7 +79,7 @@ public class Level_03_PageObject_01_Login extends BasePage {
 	  @Test
 	  public void Login_03_Email_Not_Exist() {
 		  System.out.println("Login_03: Step 1: Click to Login Link");
-		  homePage.clickToLoginLink();
+		  homePage.openLoginPage();
 		  System.out.println("Login_03: Step 2: Input data to textbox");
 		  loginPage.sendTextToEmailTextBox("thuyphan@ott.com");
 		  loginPage.sendTextPasswordTextBox(password);
@@ -92,7 +92,7 @@ public class Level_03_PageObject_01_Login extends BasePage {
 	  @Test
 	  public void Login_04_Password_Blank() {
 		  System.out.println("Login_04: Step 1: Click to login Link");
-		  homePage.clickToLoginLink();
+		  homePage.openLoginPage();
 		  System.out.println("Login_04: Step 2: Input data to textbox");
 		  loginPage.sendTextToEmailTextBox(emailAdress);
 		  System.out.println("Login_04: Step 3: Click to Login Button");
@@ -104,7 +104,7 @@ public class Level_03_PageObject_01_Login extends BasePage {
 	 @Test
 	  public void Login_05_Password_Not_Match_Email() {
 		 System.out.println("Login_05: Step 1: Click to Login Link");
-		 homePage.clickToLoginLink();
+		 homePage.openLoginPage();
 		 System.out.println("Login_05: Step 2: Input data to textbox");
 		 loginPage.sendTextToEmailTextBox(emailAdress);
 		 loginPage.sendTextPasswordTextBox("099090");
@@ -117,7 +117,7 @@ public class Level_03_PageObject_01_Login extends BasePage {
 	  @Test
 	  public void Login_06_Valid_Data() {
 		  System.out.println("Login_06: Step 1: Click to Login Link");
-		  homePage.clickToLoginLink();
+		  homePage.openLoginPage();
 		  System.out.println("Login_06: Step 2: Input data to textbox");
 		  loginPage.sendTextToEmailTextBox(emailAdress);
 		  loginPage.sendTextPasswordTextBox(password);

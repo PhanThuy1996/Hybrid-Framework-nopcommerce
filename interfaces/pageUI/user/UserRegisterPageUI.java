@@ -1,6 +1,6 @@
-package pageUI;
+package pageUI.user;
 
-public class RegisterPageUI {
+public class UserRegisterPageUI {
 	public static final String REGISTER_BUTTON = "//button[@id='register-button']";
 	public static final String FIRST_NAME_TEXTBOX = "//input[@id ='FirstName']";
 	public static final String LASTNAME_TEXTBOX = "//input[@id ='LastName']";

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 import commons.BasePageFactory;
-import pageUI.RegisterPageUI;
+import pageUI.user.UserRegisterPageUI;
 
 public class RegisterPageObject extends BasePageFactory{
 	private WebDriver driver;

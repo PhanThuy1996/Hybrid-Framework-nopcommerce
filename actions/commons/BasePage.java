@@ -14,7 +14,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import pageObjects.AddressesPageObject;
+import pageObjects.PageGeneratorManager;
+import pageUI.BasePageUI;
+
 public class BasePage {
+	private int longTimeOut =30;
 	public void openPageUrl(WebDriver driver, String pageURL) {
 		driver.get(pageURL);
 	}
@@ -37,7 +42,7 @@ public class BasePage {
 		driver.navigate().refresh();
 	}
 	public Alert waitForAlertPresence(WebDriver driver) {
-		WebDriverWait explicitwait = new WebDriverWait(driver,30);
+		WebDriverWait explicitwait = new WebDriverWait(driver,longTimeOut);
 		return	explicitwait.until(ExpectedConditions.alertIsPresent());		
 	}
 	public void acceptAlert(WebDriver driver){
@@ -120,7 +125,7 @@ public class BasePage {
 	public void selectItemDropdown(WebDriver driver, String parentXpath, String childXpath, String expectedTextItem) {
 		getWebElement(driver,parentXpath).click();
 		sleepInSecond(1);
-		WebDriverWait expliciWait = new WebDriverWait(driver,30);
+		WebDriverWait expliciWait = new WebDriverWait(driver,longTimeOut);
 		expliciWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(childXpath)));
 		List<WebElement> speedDropdownItems = driver.findElements(By.xpath(childXpath));
 		for (WebElement tempItem : speedDropdownItems) {
@@ -279,5 +284,10 @@ public class BasePage {
 			e.printStackTrace();
 		}
 	}
-	private int longTimeOut =30;
+
+	protected AddressesPageObject openAddressPage(WebDriver driver) {
+		waitForElementVisible(driver, BasePageUI.ADDRESSES_LINK);
+		clickToElement(driver, BasePageUI.ADDRESSES_LINK);
+		return PageGeneratorManager.
+	}
 }

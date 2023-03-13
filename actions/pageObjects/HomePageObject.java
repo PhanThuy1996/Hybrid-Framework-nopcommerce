@@ -23,7 +23,7 @@ public class HomePageObject extends BasePage {
 	public String getURLHomePage() {
 		return getCurrentURL(driver);
 	}
-	public MyAccountPageObject clickToMyAccountLink() {
+	public CustomerInfoPageObject clickToMyAccountLink() {
 		waitForElementClickable(driver, HomePageUI.MY_ACCOUNT_LINK);
 		clickToElement(driver, HomePageUI.MY_ACCOUNT_LINK);
 		return PageGeneratorManager.getMyAccountPage(driver);
@@ -32,5 +32,6 @@ public class HomePageObject extends BasePage {
 		waitForElementVisible(driver, HomePageUI.MY_ACCOUNT_LINK);
 		return isElementDisplayed(driver, HomePageUI.MY_ACCOUNT_LINK);
 	}
+
 
 }

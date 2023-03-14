@@ -11,4 +11,6 @@ public class BasePageUI {
 	public static final String MY_PRODUCT_REVIEWS_LINK="//li[contains(@class,'customer-reviews')]/a";
 	public static final String USER_LOGOUT_LINK = "//a[@class='ico-logout']";
 	public static final String ADMIN_LOGOUT_LINK = "//a[text()='Logout']";
+	
+	public static final String DYNAMIC_XPATH_LINK ="//li[contains(@class,'%s')]/a";
 }

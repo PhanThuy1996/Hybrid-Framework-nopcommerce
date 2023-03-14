@@ -16,7 +16,7 @@ import pageObjects.User.UserRewardPointsPageObject;
 import pageOjects.Admin.AdminDashBoardPageObject;
 import pageOjects.Admin.AdminLoginPageObject;
 
-public class PageGeneratorManager {
+public class PageGeneratorManager extends BasePage {
 	public static UserHomePageObject getUserHomePage(WebDriver driver) {
 		return new UserHomePageObject(driver);
 	}

@@ -31,7 +31,7 @@ public class Topic_13_String_Format {
 	}
 	
 	public static void getLinkLocator(String dynamicLocator, String... parameter ) {
-		String locator = String.format(dynamicLocator, parameter);
+		String locator = String.format(dynamicLocator,(Object[]) parameter);
 		System.out.println(locator);
 	}
 	

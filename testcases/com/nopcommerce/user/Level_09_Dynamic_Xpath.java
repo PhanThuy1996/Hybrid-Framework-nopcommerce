@@ -9,16 +9,12 @@ import org.testng.annotations.Test;
 
 import commons.BaseTest;
 import commons.PageGeneratorManager;
-import pageObjects.User.UserBackInStockSubsciptionsPageObject;
-import pageObjects.User.UserChangePasswordPageObject;
 import pageObjects.User.UserCustomerInfoPageObject;
 import pageObjects.User.UserDownloadableProductsPageObject;
 import pageObjects.User.UserHomePageObject;
 import pageObjects.User.UserLoginPageObject;
-import pageObjects.User.UserMyProductReviewsPageObject;
 import pageObjects.User.UserOrdersPageObject;
 import pageObjects.User.UserRegisterPageObject;
-import pageObjects.User.UserRewardPointsPageObject;
 
 public class Level_09_Dynamic_Xpath extends BaseTest {
 	private WebDriver driver;
@@ -28,9 +24,9 @@ public class Level_09_Dynamic_Xpath extends BaseTest {
 	private UserLoginPageObject loginPage;
 	private UserCustomerInfoPageObject customerInfoPage;
 	private UserDownloadableProductsPageObject downloadableProductsPage;
-	private UserMyProductReviewsPageObject myProductReviewPage;
+	//private UserMyProductReviewsPageObject myProductReviewPage;
 	private UserOrdersPageObject orderPage;
-	private UserRewardPointsPageObject rewardPointsPage;
+	//private UserRewardPointsPageObject rewardPointsPage;
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {

@@ -14,19 +14,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import pageObjects.User.UserAddressesPageObject;
-import pageObjects.User.UserBackInStockSubsciptionsPageObject;
-import pageObjects.User.UserChangePasswordPageObject;
-import pageObjects.User.UserDownloadableProductsPageObject;
 import pageObjects.User.UserHomePageObject;
-import pageObjects.User.UserMyProductReviewsPageObject;
-import pageObjects.User.UserOrdersPageObject;
-import pageObjects.User.UserRewardPointsPageObject;
 import pageOjects.Admin.AdminLoginPageObject;
 import pageUI.user.BasePageUI;
 
 public class BasePage {
-	private int longTimeOut =30;
+	private long longTimeOut = GlobalConstants.LONG_TIMEOUT;
 	public void openPageUrl(WebDriver driver, String pageURL) {
 		driver.get(pageURL);
 	}

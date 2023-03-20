@@ -1,0 +1,5 @@
+package JavaOOP;
+
+public enum BrowserLists {
+	CHROME,IE,FIREFOX,COCCOC, BRAVE, SAFARI, OPERA, H_CHROME, H_FIREFOX,EDGE;
+}

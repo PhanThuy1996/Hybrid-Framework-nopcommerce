@@ -1,5 +1,7 @@
 package com.jquery.datatable;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -20,7 +22,7 @@ public class Level_10_DataTable extends BaseTest {
 		driver = getBrowserDriver(browserName,url);	
 		homePage = PageGeneratorManager.getHomePage(driver);
 	}
-	@Test
+	//@Test
 	public void DataTable_01_Click_On_Paging() {
 		homePage.clickToPagingByNumber(20);
 		homePage.sleepInSecond(1);
@@ -33,18 +35,19 @@ public class Level_10_DataTable extends BaseTest {
 		homePage.verifyPageSelected(5);
 	}  
 	  
-	 @Test
+	 //@Test
 	 public void DataTable_02_Filter() {
+		homePage.refreshCurrentPage(driver);
 		homePage.sendkeysToTextboxByValue("Females","3929");
 		homePage.sendkeysToTextboxByValue("Country","Belize");
 		homePage.sendkeysToTextboxByValue("Males","3913");
 		homePage.sendkeysToTextboxByValue("Total","7842");
-		homePage.sleepInSecond(1);
+		homePage.sleepInSecond(3);
 	  }
 	 
-	// @Test
-	 public void User_03_Dynamic_Xpath_2() {
-		
+	@Test
+	 public void DataTable_03_getDataFromPage() {	
+		homePage.getDataAllPage();
 	  }
 	 
 	 

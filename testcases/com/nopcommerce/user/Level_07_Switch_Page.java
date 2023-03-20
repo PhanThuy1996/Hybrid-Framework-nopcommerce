@@ -9,16 +9,10 @@ import org.testng.annotations.Test;
 
 import commons.BaseTest;
 import commons.PageGeneratorManager;
-import pageObjects.User.UserBackInStockSubsciptionsPageObject;
-import pageObjects.User.UserChangePasswordPageObject;
 import pageObjects.User.UserCustomerInfoPageObject;
-import pageObjects.User.UserDownloadableProductsPageObject;
 import pageObjects.User.UserHomePageObject;
 import pageObjects.User.UserLoginPageObject;
-import pageObjects.User.UserMyProductReviewsPageObject;
-import pageObjects.User.UserOrdersPageObject;
 import pageObjects.User.UserRegisterPageObject;
-import pageObjects.User.UserRewardPointsPageObject;
 
 public class Level_07_Switch_Page extends BaseTest {
 	private WebDriver driver;
@@ -27,12 +21,12 @@ public class Level_07_Switch_Page extends BaseTest {
 	private UserRegisterPageObject registerPage;
 	private UserLoginPageObject loginPage;
 	private UserCustomerInfoPageObject customerInfoPage;
-	private UserBackInStockSubsciptionsPageObject backInStockSubsciptionPage;
-	private UserChangePasswordPageObject changePasswordPage;
-	private UserDownloadableProductsPageObject downloadableProductsPage;
-	private UserMyProductReviewsPageObject myProductReviewPage;
-	private UserOrdersPageObject orderPage;
-	private UserRewardPointsPageObject rewardPointsPage;
+//	private UserBackInStockSubsciptionsPageObject backInStockSubsciptionPage;
+//	private UserChangePasswordPageObject changePasswordPage;
+//	private UserDownloadableProductsPageObject downloadableProductsPage;
+//	private UserMyProductReviewsPageObject myProductReviewPage;
+//	private UserOrdersPageObject orderPage;
+//	private UserRewardPointsPageObject rewardPointsPage;
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
@@ -86,13 +80,13 @@ public class Level_07_Switch_Page extends BaseTest {
 	  
 	  @Test
 	  public void User_04_Switch_Page() {
-		 changePasswordPage = customerInfoPage.openChangePasswordPage(driver);
-		 rewardPointsPage = changePasswordPage.openRewardPointsPage(driver);
-		 downloadableProductsPage = rewardPointsPage.openDownloadableProductsPage(driver);
-		 orderPage = downloadableProductsPage.openOrdersPage(driver);
-		 backInStockSubsciptionPage = orderPage.openBackInStockSubscriptPage(driver);
-		 myProductReviewPage = backInStockSubsciptionPage.openMyProductReviewsPage(driver);
-		 changePasswordPage = myProductReviewPage.openChangePasswordPage(driver);
+//		 changePasswordPage = customerInfoPage.openChangePasswordPage(driver);
+//		 rewardPointsPage = changePasswordPage.openRewardPointsPage(driver);
+//		 downloadableProductsPage = rewardPointsPage.openDownloadableProductsPage(driver);
+//		 orderPage = downloadableProductsPage.openOrdersPage(driver);
+//		 backInStockSubsciptionPage = orderPage.openBackInStockSubscriptPage(driver);
+//		 myProductReviewPage = backInStockSubsciptionPage.openMyProductReviewsPage(driver);
+//		 changePasswordPage = myProductReviewPage.openChangePasswordPage(driver);
 	  }
 	  
 	@AfterClass

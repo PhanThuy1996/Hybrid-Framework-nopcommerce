@@ -2,6 +2,7 @@ package commons;
 
 import org.openqa.selenium.WebDriver;
 
+import PageObject.Jquery.HomePageObject;
 import pageObjects.User.UserAddressesPageObject;
 import pageObjects.User.UserBackInStockSubsciptionsPageObject;
 import pageObjects.User.UserChangePasswordPageObject;
@@ -67,6 +68,10 @@ public class PageGeneratorManager extends BasePage {
 	
 	public static AdminDashBoardPageObject getAdminDashBoardPage(WebDriver driver) {
 		return new AdminDashBoardPageObject(driver);
+	}
+	
+	public static HomePageObject getHomePage(WebDriver driver) {
+		return new HomePageObject(driver);
 	}
 	
 }

@@ -1,7 +1,5 @@
 package com.jquery.datatable;
 
-import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -35,18 +33,19 @@ public class Level_10_DataTable extends BaseTest {
 		homePage.verifyPageSelected(5);
 	}  
 	  
-	 //@Test
+	 @Test
 	 public void DataTable_02_Filter() {
 		homePage.refreshCurrentPage(driver);
-		homePage.sendkeysToTextboxByValue("Females","3929");
-		homePage.sendkeysToTextboxByValue("Country","Belize");
-		homePage.sendkeysToTextboxByValue("Males","3913");
-		homePage.sendkeysToTextboxByValue("Total","7842");
+		homePage.sendkeysToTextboxByValue("Females","60456");
+		homePage.sendkeysToTextboxByValue("Country","Belgium");
+		homePage.sendkeysToTextboxByValue("Males","63391");
+		homePage.sendkeysToTextboxByValue("Total","123847");
 		homePage.sleepInSecond(3);
 	  }
 	 
-	@Test
+	//@Test
 	 public void DataTable_03_getDataFromPage() {	
+		//lấy data so sánh....
 		homePage.getDataAllPage();
 	  }
 	 

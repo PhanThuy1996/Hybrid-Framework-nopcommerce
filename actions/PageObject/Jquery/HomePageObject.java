@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import commons.BasePage;
+import pageUI.Jquery.AppendGridUI;
 import pageUI.Jquery.HomePageUI;
 
 public class HomePageObject extends BasePage{
@@ -33,13 +34,12 @@ public class HomePageObject extends BasePage{
 		
 	}
 
-	public List<String> getDataAllPage() {
+	public void getDataAllPage() {
 		int totalPage = getElementSize(driver, HomePageUI.PAGE_LINK);
 		System.out.println("Total page: "+totalPage);
 		List<String> allRowValueAllPage= new ArrayList<String>();
 		for(int page = 1;page<=totalPage;page++) {
 			clickToElement(driver,HomePageUI.DYNAMIC_PAGE_LINK, Integer.toString(page));
-			sleepInSecond(1);
 			List<WebElement> allRowElementEachPage = getListWebElement(driver, HomePageUI.ALL_ROW_EACH_PAGE);
 			for (WebElement eachRow : allRowElementEachPage) {
 				allRowValueAllPage.add(eachRow.getText());
@@ -50,7 +50,16 @@ public class HomePageObject extends BasePage{
 			System.out.println("-----------------");
 			System.out.println(pageValue);
 		}
-	return allRowValueAllPage;
+	
 	}
+
+	public void sendKeysToDynamicTextboxByRowNumber(String nameColumn, String numberRow, String ...paramValue) {
+		int positionColumn = getElementSize(driver, AppendGridUI.DYNAMIC_COLUMN_PRECEDING);
+		sendKeyToElement(driver, nameColumn, numberRow, paramValue);
+		
+	}
+	
+	
+	// bài table khác
 	
 }

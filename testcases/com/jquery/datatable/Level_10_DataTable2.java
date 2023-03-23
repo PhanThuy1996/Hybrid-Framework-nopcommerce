@@ -20,9 +20,14 @@ public class Level_10_DataTable2 extends BaseTest {
 		driver = getBrowserDriver(browserName,url);	
 		homePage = PageGeneratorManager.getHomePage(driver);
 	}
-	//@Test
-	public void DataTable_01_Click_On_Paging() {
-		homePage.sendKeysToDynamicTextboxByRowNumber("Company","2","Jackon Nguyen");
+	@Test
+	public void DataTable_01_Enter_Value_In_Table() {
+		homePage.enterToTextBoxByColumnAtRowNumber("Company","2","Jackon Nguyen");
+		homePage.enterToTextBoxByColumnAtRowNumber("Contact Person","2","Nguyen Tho");
+		homePage.selectDropdownByColumnAtRowNumber("Country","2","Hong Kong");
+		homePage.checkToCheckBoxByColumnAtRowNumber("NPO?","2");
+		homePage.enterToTextBoxByColumnAtRowNumber("Order Placed","2","1");
+			
 	}  
 	  
 	 

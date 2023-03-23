@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pageObjects.User.UserHomePageObject;
 import pageOjects.Admin.AdminLoginPageObject;
+import pageUI.Jquery.JQueryUploadFileUI;
 import pageUI.user.BasePageUI;
 
 public class BasePage {
@@ -121,17 +122,17 @@ public class BasePage {
 	}
 	public void sendKeyToElement(WebDriver driver, String xpathLocator, String textValue, String... paramValues) {
 		WebElement element = getWebElement(driver,getDynamicLocator(xpathLocator, paramValues));
-		element.clear();
+		//element.clear();
 		element.sendKeys(textValue);
 	}
 	
 	public void selectItemInDefaultDropdown(WebDriver driver, String xpathLocator, String textItem) {
 		Select select = new Select(getWebElement(driver, xpathLocator));
-		select.selectByValue(textItem);
+		select.selectByVisibleText(textItem);
 	}
 	public void selectItemInDefaultDropdown(WebDriver driver, String xpathLocator, String textItem, String... paramValues) {
 		Select select = new Select(getWebElement(driver, getDynamicLocator(xpathLocator, paramValues)));
-		select.selectByValue(textItem);
+		select.selectByVisibleText(textItem);
 	}
 	
 	public String getSelectedItemDefaultDropdown(WebDriver driver, String xpathLocator) {
@@ -356,6 +357,15 @@ public class BasePage {
 		explicitwait.until(ExpectedConditions.elementToBeClickable(getByXpath(getDynamicLocator(xpathLocator, paramValues))));
 	}
 	
+	public void waitForElementSelected(WebDriver driver,String xpathLocator) {
+		WebDriverWait explicitwait = new WebDriverWait(driver,longTimeOut);
+		explicitwait.until(ExpectedConditions.elementToBeSelected(getByXpath(xpathLocator)));
+	}
+	public void waitForElementSelected(WebDriver driver,String xpathLocator, String... paramValues) {
+		WebDriverWait explicitwait = new WebDriverWait(driver,longTimeOut);
+		explicitwait.until(ExpectedConditions.elementToBeSelected(getByXpath(getDynamicLocator(xpathLocator, paramValues))));
+	}
+	
 	public void clearTextElement(WebDriver driver,String xpathLocator) {
 		getWebElement(driver, xpathLocator).clear();
 	}
@@ -368,43 +378,15 @@ public class BasePage {
 		}
 	}
 
-//	public UserAddressesPageObject openAddressPage(WebDriver driver) {
-//		waitForElementVisible(driver, BasePageUI.ADDRESSES_LINK);
-//		clickToElement(driver, BasePageUI.ADDRESSES_LINK);
-//		return PageGeneratorManager.getUserAddressPage(driver);
-//	}
-//	
-//	public UserBackInStockSubsciptionsPageObject openBackInStockSubscriptPage(WebDriver driver) {
-//		waitForElementVisible(driver, BasePageUI.BACK_IN_STOCK_SUBSCIPTTIONS_LINK);
-//		clickToElement(driver, BasePageUI.BACK_IN_STOCK_SUBSCIPTTIONS_LINK);
-//		return PageGeneratorManager.getUserBackToStockSubscriptionPage(driver);
-//	}
-//	public UserChangePasswordPageObject openChangePasswordPage(WebDriver driver) {
-//		waitForElementVisible(driver, BasePageUI.CHANGE_PASSWORD_LINK);
-//		clickToElement(driver, BasePageUI.CHANGE_PASSWORD_LINK);
-//		return PageGeneratorManager.getUserChangePasswordPage(driver);
-//	}
-//	public UserDownloadableProductsPageObject openDownloadableProductsPage(WebDriver driver) {
-//		waitForElementVisible(driver, BasePageUI.DOWNLOADABLE_PRODUCTS_LINK);
-//		clickToElement(driver, BasePageUI.DOWNLOADABLE_PRODUCTS_LINK);
-//		return PageGeneratorManager.getUserDownloadableProductsPage(driver);
-//	}
-//	public UserMyProductReviewsPageObject openMyProductReviewsPage(WebDriver driver) {
-//		waitForElementVisible(driver, BasePageUI.MY_PRODUCT_REVIEWS_LINK);
-//		clickToElement(driver, BasePageUI.MY_PRODUCT_REVIEWS_LINK);
-//		return PageGeneratorManager.getUserMyProductReviewsPage(driver);
-//	}
-//	public UserOrdersPageObject openOrdersPage(WebDriver driver) {
-//		waitForElementVisible(driver, BasePageUI.ORDERS_LINK);
-//		clickToElement(driver, BasePageUI.ORDERS_LINK);
-//		return PageGeneratorManager.getUserOdersPage(driver);
-//	}
-//	public UserRewardPointsPageObject openRewardPointsPage(WebDriver driver) {
-//		waitForElementVisible(driver, BasePageUI.REWARD_POINTS_LINK);
-//		clickToElement(driver, BasePageUI.REWARD_POINTS_LINK);
-//		return PageGeneratorManager.getUserRewardPointsPage(driver);
-//	}	
-//	
+	public void upLoadMultipleFiles(WebDriver driver, String ...fileNames) {
+		String filePath = GlobalConstants.UPLOAD_FILE;
+		String fullFileName = "";
+		for(String file:fileNames) {
+			fullFileName=fullFileName+filePath+file+"\n";
+		}
+		fullFileName=fullFileName.trim();
+		getWebElement(driver, JQueryUploadFileUI.ADD_FILE_BUTTON).sendKeys(fullFileName);
+	}
 	public BasePage openPagesAtMyAccountByName(WebDriver driver, String pageName) {
 		waitForElementVisible(driver, BasePageUI.DYNAMIC_XPATH_LINK,pageName);
 		clickToElement(driver, BasePageUI.DYNAMIC_XPATH_LINK,pageName);

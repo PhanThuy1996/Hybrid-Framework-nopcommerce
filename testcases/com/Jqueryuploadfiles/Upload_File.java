@@ -1,6 +1,7 @@
 package com.Jqueryuploadfiles;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -13,35 +14,36 @@ import commons.BaseTest;
 public class Upload_File extends BaseTest {
 	private WebDriver driver;
 	private JqueryUploadFilePageObject uploadPage;
-	private String fileName1="F1.png";
-	private String fileName2="F2.png";
-	private String fileName3="F3.png";
-	private String[] multipleFiles = {fileName1,fileName2,fileName3};
+	private String fileName1 = "F1.png";
+	private String fileName2 = "F2.png";
+	private String fileName3 = "F3.png";
+	private String[] multipleFiles = { fileName1, fileName2, fileName3 };
 
-	@Parameters({ "browser","url"})
+	@Parameters({ "browser", "url" })
 	@BeforeClass
 	public void beforeClass(String browserName, String url) {
-		driver = getBrowserDriver(browserName,url);	
+		driver = getBrowserDriver(browserName, url);
 		uploadPage = PageGeneratorManager.getUserHomePage(driver);
-		
+
 	}
-	@Test
+
+	//@Test
 	public void upload_One_File_One_Time() {
 		uploadPage.uploadOneFile(fileName1);
-			
-	}  
+		Assert.assertEquals(uploadPage.verifyFileSent(), fileName1);
+		uploadPage.clickToStartUpload();
+		Assert.assertTrue(uploadPage.verifyFilesUpload(driver, fileName1));
+	}
+
 	@Test
 	public void upload_Multiple_File_One_Time() {
-		
 		uploadPage.uploadMultipleFile(multipleFiles);
+		uploadPage.clickToStartUpload();
+		Assert.assertTrue(uploadPage.verifyFilesUpload(driver, multipleFiles));
 	}
-	  
-	 
-	  
+
 	@AfterClass
 	public void afterClass() {
 	}
-	
-
 
 }

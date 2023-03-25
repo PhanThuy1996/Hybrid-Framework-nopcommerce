@@ -10,6 +10,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.opera.OperaDriver;
+import org.testng.Assert;
+import org.testng.Reporter;
 
 import JavaOOP.BrowserLists;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -67,8 +69,8 @@ public class BaseTest {
 		return driver;
 
 	}
-	
-	protected WebDriver getBrowserDriver(String browserName,String url) {
+
+	protected WebDriver getBrowserDriver(String browserName, String url) {
 		BrowserLists browserList = BrowserLists.valueOf(browserName.toUpperCase());
 		if (browserList == BrowserLists.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
@@ -123,4 +125,50 @@ public class BaseTest {
 		Random rand = new Random();
 		return rand.nextInt(9999);
 	}
+
+// Hàm verify custom base trên Hard Assert của TestNG
+	protected boolean verifyTrue(boolean condition) {
+		boolean pass = true;
+		try {
+			Assert.assertTrue(condition);
+			System.out.println("\" -------------------------- PASSED -------------------------- \"");
+
+		} catch (Throwable e) {
+			System.out.println(" -------------------------- FAILED -------------------------- ");
+			pass = false;
+			// Add lỗi vào ReportNG
+			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
+			Reporter.getCurrentTestResult().setThrowable(e);
+		}
+		return pass;
+	}
+
+	protected boolean verifyFalse(boolean condition) {
+		boolean pass = true;
+		try {
+			Assert.assertFalse(condition);
+			System.out.println(" -------------------------- PASSED -------------------------- ");
+		} catch (Throwable e) {
+			System.out.println(" -------------------------- FAILED -------------------------- ");
+			pass = false;
+			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
+			Reporter.getCurrentTestResult().setThrowable(e);
+		}
+		return pass;
+	}
+
+	protected boolean verifyEquals(Object actual, Object expected) {
+		boolean pass = true;
+		try {
+			Assert.assertEquals(actual, expected);
+			System.out.println(" -------------------------- PASSED -------------------------- ");
+		} catch (Throwable e) {
+			pass = false;
+			System.out.println(" -------------------------- FAILED -------------------------- ");
+			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
+			Reporter.getCurrentTestResult().setThrowable(e);
+		}
+		return pass;
+	}
+
 }

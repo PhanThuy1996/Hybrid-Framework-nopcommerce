@@ -3,11 +3,13 @@
 
 <listeners >
 	<listener class-name="commons.MethodListener"></listener>
+	<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+	<listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>
 </listeners>
   <test name="Run on Chrome">
  	 <parameter name ="browser" value ="chrome" />
 	  	<classes>
-			 <class name="com.nopcommerce.user.Level_10_Custom_Assert_TESTNG"/>   
+			 <class name="com.nopcommerce.user.Level_11_Log_Report_NG"/>   
 	    </classes>
    </test>
     

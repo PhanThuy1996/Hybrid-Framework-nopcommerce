@@ -91,7 +91,7 @@ public class BasePageFactory {
 	private WebElement getWebElement(WebDriver driver, String xpathLocator) {
 		return driver.findElement(By.xpath(xpathLocator));
 	}
-	private List<WebElement> getListWebElement(WebDriver driver, String xpathLocator){
+	protected List<WebElement> getListWebElement(WebDriver driver, String xpathLocator){
 		return driver.findElements(getByXpath(xpathLocator));
 	}
 	public void clickToElement(WebDriver driver, WebElement element) {

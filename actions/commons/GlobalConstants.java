@@ -12,6 +12,7 @@ public class GlobalConstants {
 	public static final String DOWNLOAD_FILE = PROJECT_PATH + File.separator  + "downloadFiles"+File.separator;
 	public static final String BROWSER_LOG = PROJECT_PATH + File.separator + "browserLogs"+File.separator;
 	public static final String DRAG_DROP_HTML5 = PROJECT_PATH + File.separator + "dragDropHTML5"+File.separator;
+	public static final String REPORTNG_SCREENSHOT = PROJECT_PATH + File.separator + "ReportNGScreenShots"+File.separator;
 	public static final String DB_URL = "";
 	public static final String DB_USER="";
 	public static final String DB_PASS = "";

@@ -131,6 +131,10 @@ public class BaseTest {
 		Random rand = new Random();
 		return rand.nextInt(9999);
 	}
+	
+	public WebDriver getDriverInstance() {
+		return this.driver;
+	}
 
 // Hàm verify custom base trên Hard Assert của TestNG
 	protected boolean verifyTrue(boolean condition) {

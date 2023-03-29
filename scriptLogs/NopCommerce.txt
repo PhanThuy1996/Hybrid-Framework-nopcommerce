@@ -1,8 +1,0 @@
-[2023-03-27 17:04:18,295] Register- Step 01: Navigave to Resiter Page
-[2023-03-27 17:04:19,162] Register- Step 02: Enter to firstName textbox 'Automation'
-[2023-03-27 17:04:19,470] Register- Step 03: Enter to lastName textbox 'Testing'
-[2023-03-27 17:04:19,799] Register- Step 04: Enter to emailAdress textbox 'ThuyPhan966302@gmail.com'
-[2023-03-27 17:04:20,166] Register- Step 05: Enter to password textbox '123456'
-[2023-03-27 17:04:20,426] Register- Step 06: Enter to ConfirmPassword textbox '123456'
-[2023-03-27 17:04:20,847] Register- Step 07: Click to Register button
-[2023-03-27 17:04:21,886] Register- Step 08: Verify messsage display

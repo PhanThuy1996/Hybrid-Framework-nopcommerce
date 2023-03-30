@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import commons.PageGeneratorManager;
+import io.qameta.allure.Step;
 import pageUI.user.UserRegisterPageUI;
 
 public class UserRegisterPageObject extends BasePage{
@@ -12,22 +13,22 @@ public class UserRegisterPageObject extends BasePage{
 	public UserRegisterPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
-
+	@Step("Get Error in FirstName")
 	public String getTextFirstNameError() {
 		waitForElementVisible(driver, UserRegisterPageUI.FIRST_NAME_ERROR_MESSAGE);
 		return getElementText(driver, UserRegisterPageUI.FIRST_NAME_ERROR_MESSAGE);
 	}
-	
+	@Step("Get Error in LastName")
 	public String getTextLastNameError() {
 		waitForElementVisible(driver, UserRegisterPageUI.LASTNAME_ERROR_MESSAGE);
 		return getElementText(driver, UserRegisterPageUI.LASTNAME_ERROR_MESSAGE);
 	}
-	
+	@Step("Get Error in Email")
 	public String getTextEmailError() {
 		waitForElementVisible(driver, UserRegisterPageUI.EMAIL_ERROR_MESSAGE);
 		return getElementText(driver, UserRegisterPageUI.EMAIL_ERROR_MESSAGE);
 	}
-	
+	@Step("Get Error in Password")
 	public String getTextPasswordError() {
 		waitForElementVisible(driver, UserRegisterPageUI.PASSWORD_ERROR_MESSAGE);
 		return getElementText(driver, UserRegisterPageUI.PASSWORD_ERROR_MESSAGE);

@@ -4,14 +4,15 @@
 <listeners >
 	<!--<listener class-name="reportConfig.ExtentTestListener"></listener>-->
 	<listener class-name="commons.MethodListener"></listener>
-	<listener class-name="reportConfig.AllureTestListener"></listener>
-<!--<listener class-name="org.uncommons.reportng.HTMLReporter"></listener> -->	
+<!--<listener class-name="reportConfig.AllureTestListener"></listener>-->
+	<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
 <!--<listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>-->
 </listeners>
   <test name="Run on Chrome">
  	 <parameter name ="browser" value ="chrome" />
 	  	<classes>
-			 <class name="com.nopcommerce.user.Level_13_Allure_Report"/>   
+	  		<class name="com.nopcommerce.commons.Register_Account_With_Cookie"/> 
+			 <class name="com.nopcommerce.user.Level_14_Share_Data_With_Cookie"/>   
 	    </classes>
    </test>
     

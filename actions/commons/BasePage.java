@@ -345,6 +345,11 @@ public class BasePage {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("arguments[0].click();", getWebElement(driver, getDynamicLocator(xpathLocator, paramValues)));
 	}
+	
+	public String getTextValueByJSXpath(WebDriver driver, String xpathLocator) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		return (String) jsExecutor.executeScript("return $(document.evaluate(\"\\\"+xpathLocator+\"\\\",document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue).value");
+	}
 
 	public void scrollToElementOnTop(WebDriver driver, String xpathLocator) {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;

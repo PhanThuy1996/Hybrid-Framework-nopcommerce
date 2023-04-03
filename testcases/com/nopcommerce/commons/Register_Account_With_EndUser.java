@@ -46,7 +46,7 @@ public class Register_Account_With_EndUser extends BaseTest {
 		log.info( "Pre-condition- Step- Step 08: Verify messsage display");
 		Assert.assertEquals(registerPage.getTextRegisterResult(), "Your registration completed");
 		System.out.println(emailAdress+password);
-		//driver.quit();
+		closeBrowserDriver();
 
 	}
 

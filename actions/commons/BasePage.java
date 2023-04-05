@@ -513,8 +513,32 @@ public class BasePage {
 		clickToElement(driver, BasePageUI.DYNAMIC_BUTTON_BY_TEXT,nameButton);	
 	}
 	public void selectItemInDropdownByLabel(WebDriver driver, String labelName, String textSelect) {
-		//waitForElementClickable(driver, BasePageUI.DYNAMIC_DROPDOWN_BY_NAME, labelName);	
+		//waitForElementSelected(driver, BasePageUI.DYNAMIC_DROPDOWN_BY_NAME,textSelect,labelName);
 		selectItemInDefaultDropdown(driver,BasePageUI.DYNAMIC_DROPDOWN_BY_NAME,textSelect,labelName);
 	}
+	public void checkRadioButton(WebDriver driver, String labelName) {
+		waitForElementClickable(driver, BasePageUI.DYNAMIC_RADIO_BY_LABEL, labelName);
+		checkToDefaultCheckboxRadio(driver,BasePageUI.DYNAMIC_RADIO_BY_LABEL, labelName);		
+	}
+	
+	public void selectCheckbox(WebDriver driver, String labelName) {
+		waitForElementClickable(driver, BasePageUI.DYNAMIC_CHECKBOX_BY_LABEL, labelName);
+		checkToDefaultCheckboxRadio(driver,BasePageUI.DYNAMIC_CHECKBOX_BY_LABEL, labelName);		
+	}
+	
+	public boolean verifyRadioSelectedByLabel(WebDriver driver, String labelName) {
+		waitForElementVisible(driver, BasePageUI.DYNAMIC_RADIO_BY_LABEL, labelName);
+		return isElementSelected(driver, BasePageUI.DYNAMIC_RADIO_BY_LABEL, labelName);
+	}
+	
+	public String getValueTextBoxByID(WebDriver driver, String textboxName) {
+		waitForElementVisible(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, textboxName);
+		return getElementAttribute(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, "value", textboxName);
+	}
+	
+	public String getValueSelectInDropdownByName(WebDriver driver, String nameValue) {
+		return getSelectedItemDefaultDropdown(driver, BasePageUI.DYNAMIC_DROPDOWN_BY_NAME, nameValue);
+	}
+
 
 }

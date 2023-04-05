@@ -19,4 +19,10 @@ public class UserCustomerInfoPageObject extends BasePage{
 		return isElementDisplayed(driver, UserCustomerInfoPageUI.TITLE_PAGE);
 	}
 
+
+
+
+
+
+
 }

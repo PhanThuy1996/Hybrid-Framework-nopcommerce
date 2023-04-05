@@ -1,7 +1,34 @@
-[2023-04-05 06:23:22,962] Register- Step 01: Navigave to Resiter Page
-[2023-04-05 06:23:53,897] Login- Step 01: Open Login Page
-[2023-04-05 06:23:54,727] Login- Step 02: Enter to emailAdress textbox 'ThuyPhan96648@gmail.com'
-[2023-04-05 06:23:54,779] Login- Step 03: Enter to password textbox '123456'
-[2023-04-05 06:23:54,821] Login- Step 04: Click To Login button
-[2023-04-05 06:24:25,216] OS name = Windows 11
-[2023-04-05 06:24:25,216] Driver instance name = chromedriver: chrome on windows (a4b31038f383d197bf780f3ef597eb8e)
+[2023-04-05 14:50:32,655] Register- Step 01: Navigave to Resiter Page
+[2023-04-05 14:50:34,257] Register- Step 02: Select Gender ='Male'
+[2023-04-05 14:50:34,448] Register- Step 03: Enter to firstName textbox 'Automation'
+[2023-04-05 14:50:34,676] Register- Step 04: Enter to lastName textbox 'Testing'
+[2023-04-05 14:50:34,889] Register- Step 05: Select Day/Month/Year 
+[2023-04-05 14:50:35,409] Register- Step 06: Enter to emailAdress textbox 'ThuyPhan968602@gmail.com'
+[2023-04-05 14:50:35,672] Register- Step 07: Enter to password textbox '123456'
+[2023-04-05 14:50:35,862] Register- Step 08: Enter to ConfirmPassword textbox '123456'
+[2023-04-05 14:50:36,017] Register- Step 09: Click to Register button
+[2023-04-05 14:50:36,931] Register- Step 10: Verify messsage display
+[2023-04-05 14:50:37,077]  -------------------------- PASSED -------------------------- 
+[2023-04-05 14:50:37,217] Login- Step 01: Open Login Page
+[2023-04-05 14:50:37,763] Login- Step 02: Enter to emailAdress textbox 'ThuyPhan968602@gmail.com'
+[2023-04-05 14:50:37,972] Login- Step 03: Enter to password textbox '123456'
+[2023-04-05 14:50:38,110] Login- Step 04: Click To Login button
+[2023-04-05 14:50:39,046] Login- Step 05: Verify My Account Link displays
+[2023-04-05 14:50:39,253] " -------------------------- PASSED -------------------------- "
+[2023-04-05 14:50:39,263] Verify information registed- Step 01: Open My Account page
+[2023-04-05 14:50:39,821] Verify information registed- Step 02: Verify My Account page displayed
+[2023-04-05 14:50:39,958] " -------------------------- PASSED -------------------------- "
+[2023-04-05 14:50:39,958] Verify information registed- Step 03: Verify gender='Male'
+[2023-04-05 14:50:40,016] " -------------------------- PASSED -------------------------- "
+[2023-04-05 14:50:40,016] Verify information registed- Step 04: Verify FirstName='Automation'
+[2023-04-05 14:50:40,082]  -------------------------- PASSED -------------------------- 
+[2023-04-05 14:50:40,082] Verify information registed- Step 05: Verify LastName='Testing'
+[2023-04-05 14:50:40,145]  -------------------------- PASSED -------------------------- 
+[2023-04-05 14:50:40,145] Verify information registed- Step 06: Verify Email='ThuyPhan968602@gmail.com'
+[2023-04-05 14:50:40,208]  -------------------------- PASSED -------------------------- 
+[2023-04-05 14:50:40,208] Verify information registed- Step 07: Verify birthday=
+[2023-04-05 14:50:40,298]  -------------------------- PASSED -------------------------- 
+[2023-04-05 14:50:40,389]  -------------------------- PASSED -------------------------- 
+[2023-04-05 14:50:41,417]  -------------------------- PASSED -------------------------- 
+[2023-04-05 14:50:41,422] OS name = Windows 10
+[2023-04-05 14:50:41,423] Driver instance name = chromedriver: chrome on windows (805debaa395644f5072a087de8b1d703)

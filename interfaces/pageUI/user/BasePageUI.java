@@ -13,4 +13,12 @@ public class BasePageUI {
 	public static final String ADMIN_LOGOUT_LINK = "//a[text()='Logout']";
 	
 	public static final String DYNAMIC_XPATH_LINK ="//li[contains(@class,'%s')]/a";
+	
+	public static final String DYNAMIC_TEXTBOX_BY_ID="//input[@id='%s']";
+	public static final String DYNAMIC_BUTTON_BY_TEXT="//button[text()='%s']";	
+	public static final String DYNAMIC_DROPDOWN_BY_NAME="//select[@name='%s']";
+	public static final String DYNAMIC_RADIO_BY_LABEL="//label[text()='%s']/preceding-sibling::input";
+	public static final String DYNAMIC_CHECKBOX_BY_LABEL= "//label[contains(text(),'%s')]/following-sibling::input";
+	
+	
 }

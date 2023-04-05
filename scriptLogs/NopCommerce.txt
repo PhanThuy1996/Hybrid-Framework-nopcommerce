@@ -1,0 +1,7 @@
+[2023-04-05 06:23:22,962] Register- Step 01: Navigave to Resiter Page
+[2023-04-05 06:23:53,897] Login- Step 01: Open Login Page
+[2023-04-05 06:23:54,727] Login- Step 02: Enter to emailAdress textbox 'ThuyPhan96648@gmail.com'
+[2023-04-05 06:23:54,779] Login- Step 03: Enter to password textbox '123456'
+[2023-04-05 06:23:54,821] Login- Step 04: Click To Login button
+[2023-04-05 06:24:25,216] OS name = Windows 11
+[2023-04-05 06:24:25,216] Driver instance name = chromedriver: chrome on windows (a4b31038f383d197bf780f3ef597eb8e)

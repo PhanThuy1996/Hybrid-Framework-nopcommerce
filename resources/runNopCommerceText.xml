@@ -11,8 +11,8 @@
   <test name="Run on Chrome">
  	 <parameter name ="browser" value ="chrome" />
 	  	<classes>
-	  		<class name="com.nopcommerce.commons.Register_Account_With_EndUser"/> 
-			 <class name="com.nopcommerce.user.Level_15_Custom_Close_Browser"/>   
+	  		<!--<class name="com.nopcommerce.commons.Register_Account_With_EndUser"/> -->
+			 <class name="com.nopcommerce.user.Level_16_Page_Pattern"/>   
 	    </classes>
    </test>
     

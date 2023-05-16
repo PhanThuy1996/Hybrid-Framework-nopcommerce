@@ -1,4 +1,4 @@
-package pageObjects.Wordpress.Admin;
+package pageObjects.Wordpress;
 
 public class AdminPostCategoriesPO {
 

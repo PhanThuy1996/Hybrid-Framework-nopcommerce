@@ -37,7 +37,9 @@ public class BaseTest {
 		BrowserLists browserList = BrowserLists.valueOf(browserName.toUpperCase());
 		if (browserList == BrowserLists.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			FirefoxOptions optionFirefox = new FirefoxOptions();
+			optionFirefox.setAcceptInsecureCerts(false);
+			driver = new FirefoxDriver(optionFirefox);
 		} else if (browserList == BrowserLists.H_FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			FirefoxOptions optionFirefox = new FirefoxOptions();
@@ -46,7 +48,9 @@ public class BaseTest {
 			driver = new FirefoxDriver(optionFirefox);
 		} else if (browserList == BrowserLists.CHROME) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			ChromeOptions optionChrome = new ChromeOptions();
+			optionChrome.setAcceptInsecureCerts(true);
+			driver = new ChromeDriver(optionChrome);
 		} else if (browserList == BrowserLists.H_CHROME) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions optionChrome = new ChromeOptions();
@@ -87,7 +91,9 @@ public class BaseTest {
 		BrowserLists browserList = BrowserLists.valueOf(browserName.toUpperCase());
 		if (browserList == BrowserLists.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			FirefoxOptions optionFirefox = new FirefoxOptions();
+			optionFirefox.setAcceptInsecureCerts(false);
+			driver = new FirefoxDriver(optionFirefox);
 		} else if (browserList == BrowserLists.H_FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			FirefoxOptions optionFirefox = new FirefoxOptions();
@@ -96,7 +102,9 @@ public class BaseTest {
 			driver = new FirefoxDriver(optionFirefox);
 		} else if (browserList == BrowserLists.CHROME) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			ChromeOptions optionChrome = new ChromeOptions();
+			optionChrome.setAcceptInsecureCerts(true);
+			driver = new ChromeDriver(optionChrome);
 		} else if (browserList == BrowserLists.H_CHROME) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions optionChrome = new ChromeOptions();

@@ -15,7 +15,7 @@ import pageObjects.Wordpress.PageGeneratorManager;
 
 public class Post_01_CRUD_Search extends BaseTest{
 	private WebDriver driver;
-	String adminUsername ="thuyphan96";
+	String adminUsername ="automationfc";
 	String adminPassword ="Quynhthu@123";
 	
 	private AdminLoginPO adminLoginPage;

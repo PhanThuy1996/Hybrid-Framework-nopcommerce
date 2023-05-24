@@ -10,10 +10,10 @@ public class AdminDashboardPO extends BasePage {
 	public AdminDashboardPO(WebDriver driver) {
 		this.driver=driver;
 	}
-	public AdminPostAddNewPO clickToPostMenuLink() {
+	public AdminPostListPO clickToPostMenuLink() {
 		waitForElementClickable(driver, AdminDashboardPageUI.POST_MENU_LINK);
 		clickToElement(driver, AdminDashboardPageUI.POST_MENU_LINK);
-		return PageGeneratorManager.getAdminPostAddNewPage(driver);	
+		return PageGeneratorManager.getAdminPostListPage(driver);	
 		
 	}
 }

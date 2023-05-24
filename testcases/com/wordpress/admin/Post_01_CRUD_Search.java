@@ -11,24 +11,28 @@ import commons.BaseTest;
 import pageObjects.Wordpress.AdminDashboardPO;
 import pageObjects.Wordpress.AdminLoginPO;
 import pageObjects.Wordpress.AdminPostAddNewPO;
+import pageObjects.Wordpress.AdminPostListPO;
 import pageObjects.Wordpress.PageGeneratorManager;
 
 public class Post_01_CRUD_Search extends BaseTest{
 	private WebDriver driver;
-	String adminUsername ="automationfc";
+	String adminUsername ="thuyphan96";
 	String adminPassword ="Quynhthu@123";
 	
 	private AdminLoginPO adminLoginPage;
 	private AdminDashboardPO adminDashboardPage;
 	private AdminPostAddNewPO adminPostAddNewPage;
+	private AdminPostListPO adminPostListPage;
+	
 	int fakeNumber = generalFakeNumber();
 	String postTitle = "Automation testing Title"+fakeNumber;
 	String postBody = "Automation testing Body"+fakeNumber;
-	String dateCurrent ="";
+	String dateCurrent ="5/25/2023";
+	String postListUrl="";
 
-	@Parameters({"browser","urlAdmin"})
+	@Parameters({"browser","urlAdmin","urlUser"})
 	@BeforeClass
-	public void beforeClass(String browserName, String urlAdmin) {
+	public void beforeClass(String browserName, String urlAdmin, String urlUser) {
 		log.info("Precondition-Step 01: Open Browser and Admin Url");
 		driver = getBrowserDriver(browserName,urlAdmin);
 		adminLoginPage = PageGeneratorManager.getAdminLoginPage(driver);
@@ -44,18 +48,21 @@ public class Post_01_CRUD_Search extends BaseTest{
 
 	@Test
 	public void Post_01_Create_New_Post() {
-		log.info("Create New Post- Step 01: Open Add Post Page");
-		adminDashboardPage.clickToPostMenuLink();
+		log.info("Create New Post- Step 01: Open Post List Page");
+		adminDashboardPage.clickToPostMenuLink();	
+		adminPostListPage=PageGeneratorManager.getAdminPostListPage(driver);
+		log.info("Create New Post- Step 02: Click Add New button-Open Add New Page");
+		adminPostListPage.clickAddNewButton();
 		adminPostAddNewPage = PageGeneratorManager.getAdminPostAddNewPage(driver);
-		log.info("Create New Post- Step 02: Input Post Title with"+postTitle);
+		log.info("Create New Post- Step 03: Input Post Title with"+postTitle);
 		adminPostAddNewPage.inputPostTitle(postTitle);
-		log.info("Create New Post- Step 03: Input Post Title with"+postBody);
+		log.info("Create New Post- Step 04: Input Post Title with"+postBody);
 		adminPostAddNewPage.inputPostBody(postBody);
-		log.info("Create New Post- Step 04: Click Publish button");
+		log.info("Create New Post- Step 05: Click Publish button");
 		adminPostAddNewPage.clickToPulishOrUpdateButton();
-		log.info("Create New Post- Step 05: Click Pre-Publish button");
+		log.info("Create New Post- Step 06: Click Pre-Publish button");
 		adminPostAddNewPage.clickToPrePulishButton();
-		log.info("Create New Post- Step 06: Verify message 'Post published' is displayed");	
+		log.info("Create New Post- Step 07: Verify message 'Post published' is displayed");	
 		verifyTrue(adminPostAddNewPage.isMessagePostPublishOrUpdateDisplayed("Post published"));
 
 	}
@@ -63,12 +70,19 @@ public class Post_01_CRUD_Search extends BaseTest{
 	@Test
 	public void Post_02_Search_Post() {
 		log.info("Search Post- Step 01: Open Post List page");
+		adminPostListPage = adminPostAddNewPage.openPostListPage();
 		log.info("Search Post- Step 02: Input Post title into search textbox with value"+postTitle);
+		adminPostListPage.inputPostTitleInSearchTextbox(postTitle);
 		log.info("Search Post- Step 03: Click Search Posts button");
+		adminPostListPage.clickToSearchPostButton();
 		log.info("Search Post- Step 04: Verify Search results for with value"+postTitle);
+		verifyTrue(adminPostListPage.isResultMessageIsDisplayed(postTitle));
 		log.info("Search Post- Step 05: Verify Title result is displayed with value"+postTitle);
+		verifyTrue(adminPostListPage.isResultPostTilteIsDisplayed(postTitle));
 		log.info("Search Post- Step 06: Verify Author result is displayed with value"+adminUsername);
+		verifyTrue(adminPostListPage.isResultPostAuthorIsDisplayed(adminUsername));
 		log.info("Search Post- Step 07: Verify Date result is displayed with value"+dateCurrent);
+		verifyTrue(adminPostListPage.isResultPostDateIsDisplayed(dateCurrent));
 		
 	}
 

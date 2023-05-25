@@ -28,11 +28,10 @@ public class Post_01_CRUD_Search extends BaseTest{
 	String postTitle = "Automation testing Title"+fakeNumber;
 	String postBody = "Automation testing Body"+fakeNumber;
 	String dateCurrent ="5/25/2023";
-	String postListUrl="";
 
-	@Parameters({"browser","urlAdmin","urlUser"})
+	@Parameters({"browser","urlAdmin"})
 	@BeforeClass
-	public void beforeClass(String browserName, String urlAdmin, String urlUser) {
+	public void beforeClass(String browserName, String urlAdmin) {
 		log.info("Precondition-Step 01: Open Browser and Admin Url");
 		driver = getBrowserDriver(browserName,urlAdmin);
 		adminLoginPage = PageGeneratorManager.getAdminLoginPage(driver);

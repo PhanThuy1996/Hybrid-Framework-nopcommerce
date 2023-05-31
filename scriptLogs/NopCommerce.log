@@ -312,3 +312,31 @@ Session ID: cb8c8e2b3186f1a3d143091123adc413
 [2023-04-05 14:50:41,417]  -------------------------- PASSED -------------------------- 
 [2023-04-05 14:50:41,422] OS name = Windows 10
 [2023-04-05 14:50:41,423] Driver instance name = chromedriver: chrome on windows (805debaa395644f5072a087de8b1d703)
+[2023-05-31 15:03:12,596] Login- Step 01: Enter to Username textbox 'standard_user'
+[2023-05-31 15:05:16,963] Login- Step 01: Enter to Username textbox 'standard_user'
+[2023-05-31 15:05:17,191] Login- Step 02: Enter to password textbox 'secret_sauce'
+[2023-05-31 15:05:17,355] Login- Step 03: Click To Login button
+[2023-05-31 15:05:17,936] OS name = Windows 10
+[2023-05-31 15:05:17,936] Driver instance name = chromedriver: chrome on windows (e7a7fab366842321373ce677881194d1)
+[2023-05-31 15:14:53,243] Login- Step 01: Enter to Username textbox 'standard_user'
+[2023-05-31 15:14:53,476] Login- Step 02: Enter to password textbox 'secret_sauce'
+[2023-05-31 15:14:53,615] Login- Step 03: Click To Login button
+[2023-05-31 15:15:54,935] OS name = Windows 10
+[2023-05-31 15:15:54,935] Driver instance name = chromedriver: chrome on windows (f0f4856dbb6ef4949aeff75f09e1da52)
+[2023-05-31 15:16:08,262] Login- Step 01: Enter to Username textbox 'standard_user'
+[2023-05-31 15:16:08,460] Login- Step 02: Enter to password textbox 'secret_sauce'
+[2023-05-31 15:16:08,641] Login- Step 03: Click To Login button
+[2023-05-31 15:16:09,663] OS name = Windows 10
+[2023-05-31 15:16:09,663] Driver instance name = chromedriver: chrome on windows (a4802342cf9a50292b8eba93d1cd24f5)
+[2023-05-31 15:16:59,172] Login- Step 01: Enter to Username textbox 'standard_user'
+[2023-05-31 15:16:59,397] Login- Step 02: Enter to password textbox 'secret_sauce'
+[2023-05-31 15:16:59,556] Login- Step 03: Click To Login button
+[2023-05-31 15:30:06,405] Login- Step 01: Enter to Username textbox 'standard_user'
+[2023-05-31 15:30:06,637] Login- Step 02: Enter to password textbox 'secret_sauce'
+[2023-05-31 15:30:06,799] Login- Step 03: Click To Login button
+[2023-05-31 15:36:03,709] Login- Step 01: Enter to Username textbox 'standard_user'
+[2023-05-31 15:36:03,943] Login- Step 02: Enter to password textbox 'secret_sauce'
+[2023-05-31 15:36:04,102] Login- Step 03: Click To Login button
+[2023-05-31 15:37:10,374] Login- Step 01: Enter to Username textbox 'standard_user'
+[2023-05-31 15:37:10,576] Login- Step 02: Enter to password textbox 'secret_sauce'
+[2023-05-31 15:37:10,737] Login- Step 03: Click To Login button
